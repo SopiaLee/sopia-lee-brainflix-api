@@ -8,6 +8,8 @@ const videosJson = require("../data/videos.json");
 
 // Get all video data
 router.get("/", (_req, res)=> {
+    // let xyz = videosJson;
+    // xyz.image = `http://localhost:8080/images/${videosJson.image}`
     res.send(videosJson);
 });
 
@@ -35,7 +37,7 @@ router.post("/", (req, res)=> {
     "id": uuid(),
     "title": title,
     "channel": "Sopia",
-    "image": `http://localhost:8080/images/uploadimage.jpg`,
+    "image": `${process.env.REACT_APP_API_URL}/images/uploadimage.jpg`,
     "description": description,
     "views": "0",
     "likes": "0",
