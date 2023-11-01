@@ -24,7 +24,6 @@ router.get("/:id", (req, res)=> {
     });
 
 // upload new video 
-
 router.post("/", (req, res)=> {
 
     console.log("req.body:",req.body);
@@ -36,7 +35,6 @@ router.post("/", (req, res)=> {
     "id": uuid(),
     "title": title,
     "channel": "Sopia",
-    // "image": "https://i.imgur.com/l2Xfgpl.jpg",
     "image": `http://localhost:8080/images/uploadimage.jpg`,
     "description": description,
     "views": "0",
