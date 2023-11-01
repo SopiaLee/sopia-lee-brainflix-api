@@ -33,10 +33,11 @@ router.post("/", (req, res)=> {
 
 
     const newVideo = { 
-        "id": uuid(),
+    "id": uuid(),
     "title": title,
     "channel": "Sopia",
-    "image": "https://i.imgur.com/l2Xfgpl.jpg",
+    // "image": "https://i.imgur.com/l2Xfgpl.jpg",
+    "image": `http://localhost:8080/images/uploadimage.jpg`,
     "description": description,
     "views": "0",
     "likes": "0",
@@ -50,16 +51,6 @@ router.post("/", (req, res)=> {
     const videoString = JSON.stringify(videosJson);
     fs.writeFileSync("./data/videos.json", videoString);
     res.send("video uploaded");
-    
-    
-    // const newVideo = {
-    //     id: dlkd
-    // }
-
-    // const newVideo = req.body;
-
-    // videos.push(newVideo);
-    // res.send("New Video Uploaded :)")
 });
 
 module.exports = router;
