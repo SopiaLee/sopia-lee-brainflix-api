@@ -5,11 +5,8 @@ const {v4: uuid} = require ("uuid");
 const videosJson = require("../data/videos.json");
 
 
-
 // Get all video data
 router.get("/", (_req, res)=> {
-    // let xyz = videosJson;
-    // xyz.image = `http://localhost:8080/images/${videosJson.image}`
     res.send(videosJson);
 });
 
@@ -31,7 +28,6 @@ router.post("/", (req, res)=> {
     console.log("req.body:",req.body);
 
     const {title, description} = req.body;
-
 
     const newVideo = { 
     "id": uuid(),
